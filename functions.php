@@ -8,8 +8,8 @@
 	define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
 	require( WL_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/menu/weblizar_nav_walker.php' );
-	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
-	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
+	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here
+	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );
 	require(dirname(__FILE__).'/customizer.php');
 		require( get_template_directory() . '/class-tgm-plugin-activation.php' );
 	//Sane Defaults
@@ -23,45 +23,26 @@
 	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
 	$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
 	$wl_theme_options=array(
-			//Logo and Fevicon header			
+			//Logo and Fevicon header
 			'upload_image_logo'=>'',
 			'height'=>'55',
 			'width'=>'150',
 			'_frontpage' => '1',
 			'blog_count'=>'3',
-			'upload_image_favicon'=>'',			
+			'upload_image_favicon'=>'',
 			'custom_css'=>'',
 			'slide_image_1' => $ImageUrl,
-			'slide_title_1' => __('Slide Title', 'enigma' ),
-			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'enigma' ),
-			'slide_btn_text_1' => __('Read More', 'enigma' ),
-			'slide_btn_link_1' => '#',
-			'slide_image_2' => $ImageUrl2,
-			'slide_title_2' => __('variations of passages', 'enigma' ),
-			'slide_desc_2' => __('Contrary to popular belief, Lorem Ipsum is not simply random text', 'enigma' ),
-			'slide_btn_text_2' => __('Read More', 'enigma' ),
-			'slide_btn_link_2' => '#',
-			'slide_image_3' => $ImageUrl3,
-			'slide_title_3' => __('Contrary to popular ', 'enigma' ),
-			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'enigma' ),
-			'slide_btn_text_3' => __('Read More', 'enigma' ),
-			'slide_btn_link_3' => '#',			
-			// Footer Call-Out
-			'fc_home'=>'1',			
+			'fc_home'=>'1',
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),
 			'fc_btn_txt' => __('More Features', 'enigma' ),
 			'fc_btn_link' =>"#",
-			'fc_icon' => 'fa fa-thumbs-up', 
+			'fc_icon' => 'fa fa-thumbs-up',
 			//Social media links
 			'header_social_media_in_enabled'=>'1',
 			'footer_section_social_media_enbled'=>'1',
 			'twitter_link' =>"#",
 			'fb_link' =>"#",
-			'linkedin_link' =>"#",
-			'youtube_link' =>"#",
-			'instagram' =>"#",
-			'gplus' =>"#",
-			
+
 			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',
 			'footer_customizations' => __(' &#169; 2016 Enigma Theme', 'enigma' ),
@@ -74,16 +55,16 @@
 			'service_1_icons'=>"fa fa-google",
 			'service_1_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_1_link'=>"#",
-			
+
 			'service_2_title'=>__('Records', 'enigma' ),
 			'service_2_icons'=>"fa fa-database",
 			'service_2_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_2_link'=>"#",
-			
+
 			'service_3_title'=>__("WordPress", 'enigma' ),
 			'service_3_icons'=>"fa fa-wordpress",
 			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
-			'service_3_link'=>"#",			
+			'service_3_link'=>"#",
 
 			//Portfolio Settings:
 			'portfolio_home'=>'1',
@@ -91,7 +72,7 @@
 			'port_1_img'=> $ImageUrl4,
 			'port_1_title'=>__('Bonorum', 'enigma' ),
 			'port_1_link'=>'#',
-			'port_2_img'=> $ImageUrl5,			
+			'port_2_img'=> $ImageUrl5,
 			'port_2_title'=>__('Content', 'enigma' ),
 			'port_2_link'=>'#',
 			'port_3_img'=> $ImageUrl6,
@@ -103,69 +84,69 @@
 			//BLOG Settings
 			'show_blog' => '1',
 			'blog_title'=>__('Latest Blog', 'enigma' ),
-			
+
 			//Google font style
 			'main_heading_font' => 'Open Sans',
 			'menu_font' => 'Open Sans',
 			'theme_title' => 'Open Sans',
 			'desc_font_all' => 'Open Sans'
-			
-			
+
+
 		);
 		return apply_filters( 'enigma_options', $wl_theme_options );
 }
 	function weblizar_get_options() {
     // Options API
-    return wp_parse_args( 
-        get_option( 'enigma_options', array() ), 
-        weblizar_default_settings() 
-    );    
+    return wp_parse_args(
+        get_option( 'enigma_options', array() ),
+        weblizar_default_settings()
+    );
 	}
-	
+
 	/*After Theme Setup*/
-	add_action( 'after_setup_theme', 'weblizar_head_setup' ); 	
+	add_action( 'after_setup_theme', 'weblizar_head_setup' );
 	function weblizar_head_setup()
-	{	
+	{
 		global $content_width;
 		//content width
 		if ( ! isset( $content_width ) ) $content_width = 550; //px
-	
+
 	    //Blog Thumb Image Sizes
 		add_image_size('home_post_thumb',340,210,true);
 		//Blogs thumbs
-		add_image_size('wl_page_thumb',730,350,true);	
+		add_image_size('wl_page_thumb',730,350,true);
 		add_image_size('blog_2c_thumb',570,350,true);
 		add_theme_support( 'title-tag' );
 		// Load text domain for translation-ready
-		load_theme_textdomain( 'enigma', WL_TEMPLATE_DIR_CORE . '/lang' );	
-		
+		load_theme_textdomain( 'enigma', WL_TEMPLATE_DIR_CORE . '/lang' );
+
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', __( 'Primary Menu', 'enigma' ) );
-		// theme support 	
+		// theme support
 		$args = array('default-color' => '000000',);
-		add_theme_support( 'custom-background', $args); 
+		add_theme_support( 'custom-background', $args);
 		add_theme_support( 'automatic-feed-links');
-		
+
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
 		add_editor_style('css/editor-style.css');
-		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here				
+		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here
 	}
-	
 
-	// Read more tag to formatting in blog page 
+
+	// Read more tag to formatting in blog page
 	function weblizar_content_more($more)
-	{  							
+	{
 	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>"'.__('Read More', 'enigma' ).'"</a></div>';
-	}   
+	}
 	add_filter( 'the_content_more_link', 'weblizar_content_more' );
-	
-	
+
+
 	// Replaces the excerpt "more" text by a link
-	function weblizar_excerpt_more($more) {      
+	function weblizar_excerpt_more($more) {
 	return '';
 	}
 	add_filter('excerpt_more', 'weblizar_excerpt_more');
@@ -193,9 +174,9 @@
 			'after_widget' => '</div>',
 			'before_title' => '<div class="enigma_footer_widget_title">',
 			'after_title' => '<div class="enigma-footer-separator"></div></div>',
-		) );             
+		) );
 	}
-	
+
 	/* Breadcrumbs  */
 	function weblizar_breadcrumbs() {
     $delimiter = '';
@@ -236,7 +217,7 @@
             //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
             echo $before . get_the_title() . $after;
         }
-		
+
     } elseif (!is_single() && !is_page() && get_post_type() != 'post') {
         $post_type = get_post_type_object(get_post_type());
         echo $before . $post_type->labels->singular_name . $after;
@@ -264,7 +245,7 @@
     } elseif (is_search()) {
         echo $before . _e("Search results for","enigma")  . get_search_query() . '"' . $after;
 
-    } elseif (is_tag()) {        
+    } elseif (is_tag()) {
 		echo $before . _e('Tag','enigma') . single_tag_title('', false) . $after;
     } elseif (is_author()) {
         global $author;
@@ -273,15 +254,15 @@
     } elseif (is_404()) {
         echo $before . _e("Error 404","enigma") . $after;
     }
-    
+
     echo '</ul>';
 	}
-	
-	
+
+
 	//PAGINATION
 		function weblizar_pagination($pages = '', $range = 2)
-{  
-     $showitems = ($range * 2)+1;  
+{
+     $showitems = ($range * 2)+1;
 
      global $paged;
      if(empty($paged)) $paged = 1;
@@ -294,7 +275,7 @@
          {
              $pages = 1;
          }
-     }   
+     }
 
      if(1 != $pages)
      {
@@ -310,7 +291,7 @@
              }
          }
 
-         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
+         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";
          if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
          echo "</div></div>";
      }
@@ -318,13 +299,13 @@
 	/*===================================================================================
 	* Add Author Links
 	* =================================================================================*/
-	function weblizar_author_profile( $contactmethods ) {	
-	
-	$contactmethods['youtube_profile'] = __('Youtube Profile URL','enigma');	
+	function weblizar_author_profile( $contactmethods ) {
+
+	$contactmethods['youtube_profile'] = __('Youtube Profile URL','enigma');
 	$contactmethods['twitter_profile'] = __('Twitter Profile URL','enigma');
 	$contactmethods['facebook_profile'] = __('Facebook Profile URL','enigma');
 	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','enigma');
-	
+
 	return $contactmethods;
 	}
 	add_filter( 'user_contactmethods', 'weblizar_author_profile', 10, 1);
@@ -336,7 +317,7 @@
 	function weblizar_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='author_detail_img", $class);
     return $class;
-	}	
+	}
 	/****--- Navigation for Author, Category , Tag , Archive ---***/
 	function weblizar_navigation() { ?>
 	<div class="enigma_blog_pagination">
@@ -349,21 +330,21 @@
 	/****--- Navigation for Single ---***/
 	function weblizar_navigation_posts() { ?>
 	<div class="navigation_en">
-	<nav id="wblizar_nav"> 
+	<nav id="wblizar_nav">
 	<span class="nav-previous">
 	<?php previous_post_link('&laquo; %link'); ?>
 	</span>
 	<span class="nav-next">
 	<?php next_post_link('%link &raquo;'); ?>
-	</span> 
+	</span>
 	</nav>
-	</div>	
-<?php 
+	</div>
+<?php
 	}
 if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
-	
-}	
+
+}
 
 //Plugin Recommend
 add_action('tgmpa_register','enigma_plugin_recommend');
@@ -373,7 +354,7 @@ function enigma_plugin_recommend(){
             'name'      => 'Responsive Coming Soon',
             'slug'      => 'responsive-coming-soon-page',
             'required'  => false,
-        ),/* 
+        ),/*
 	array(
             'name'      => 'Photo Video Link Gallery',
             'slug'      => 'photo-video-link-gallery',
@@ -409,7 +390,7 @@ function enigma_plugin_recommend(){
             'slug'      => 'admin-custom-login',
             'required'  => false,
         )
-		
+
 	);
     tgmpa( $plugins );
 }
