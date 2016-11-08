@@ -1,5 +1,5 @@
 <?php
-/** Theme Name	: Enigma
+/** Theme Name	: Summit
 * Theme Core Functions and Codes
 */
 	/**Includes required resources here**/
@@ -66,19 +66,15 @@
 
 			//Portfolio Settings:
 			'portfolio_home'=>'1',
-			'port_heading' => __('Recent Works', 'enigma' ),
+			'port_heading' => __('Recent Donations', 'enigma' ),
 			'port_1_img'=> $ImageUrl4,
-			'port_1_title'=>__('Bonorum', 'enigma' ),
-			'port_1_link'=>'#',
+			'port_1_title'=>__('Bobby Brooks', 'enigma' ),
 			'port_2_img'=> $ImageUrl5,
-			'port_2_title'=>__('Content', 'enigma' ),
-			'port_2_link'=>'#',
+			'port_2_title'=>__('Dr.Oddi-APUS', 'enigma' ),
 			'port_3_img'=> $ImageUrl6,
-			'port_3_title'=>__('dictionary', 'enigma' ),
-			'port_3_link'=>'#',
+			'port_3_title'=>__('Richard and Laurrana Leigon', 'enigma' ),
 			'port_4_img'=> $ImageUrl7,
-			'port_4_title'=>__('randomised', 'enigma' ),
-			'port_4_link'=>'#',
+			'port_4_title'=>__('Robert Brooks', 'enigma' ),
 			//BLOG Settings
 			'show_blog' => '1',
 			'blog_title'=>__('Latest Blog', 'enigma' ),
