@@ -1,5 +1,5 @@
 <?php
-/** Theme Name	: Enigma
+/** Theme Name	: Summit
 * Theme Core Functions and Codes
 */
 	/**Includes required resources here**/
