@@ -43,8 +43,6 @@
 			'twitter_link' =>"#",
 			'fb_link' =>"#",
 
-			'email_id' => 'example@mymail.com',
-			'phone_no' => '0159753586',
 			'footer_customizations' => __(' &#169; 2016 Enigma Theme', 'enigma' ),
 			'developed_by_text' => __('Theme Developed By', 'enigma' ),
 			'developed_by_weblizar_text' => __('Weblizar Themes', 'enigma' ),
